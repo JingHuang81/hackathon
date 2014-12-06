@@ -4,9 +4,11 @@ from flask import Flask
 # where app matches the name of this file without the .py extension.
 app = Flask(__name__)
 
-@app.route("/user/<username>")
-def hello(username):
-    return "Hello %s!" % username
+@app.route("/distaster/<name>")
+def hello(name):
+    # Get data from SQL Server
+    data = {'lat':159.553, 'long':35.244,'inventory':{'medical':3}}
+    return json.dumps(data)
 
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
