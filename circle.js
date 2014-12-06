@@ -43,27 +43,25 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
   
-  
+  var infowindow = new google.maps.InfoWindow({
+      content: ""
+  });
   // Construct the circle for each value in citymap.
   // Note: We scale the area of the circle based on the population.
   for (var city in citymap) {
      var contentString = '<div id="content">'+
       '<div id="siteNotice">'+ city + '</div>'+ '</div>';
 
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-    
     var marker = new google.maps.Marker({
       position: citymap[city].center,
       map: map,
       title: city
     });
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.open(map,marker);
-      console.log(infowindow)
-    });
-    
+//    google.maps.event.addListener(marker, 'click', function() {
+//      infowindow.open(map,marker);
+//      console.log(infowindow)
+//    });
+    bindInfoWindow(marker, map, infowindow, city);
     var color = chooseColors(citymap[city].population)
     var populationOptions = {
       strokeColor: color,
@@ -77,6 +75,13 @@ function initialize() {
     };
     // Add the circle for this city to the map.
     cityCircle = new google.maps.Circle(populationOptions);
+  }
+  
+  function bindInfoWindow(marker, map, infowindow, strDescription) {
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(strDescription);
+        infowindow.open(map, marker);
+    });
   }
 }
 
