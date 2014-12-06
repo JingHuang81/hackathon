@@ -4,7 +4,9 @@ from flask import Flask
 # where app matches the name of this file without the .py extension.
 app = Flask(__name__)
 
-from routes import *
+@app.route("/")
+def hello():
+    return "Hello World!"
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app
