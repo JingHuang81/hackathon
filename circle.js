@@ -61,6 +61,8 @@ function initialize() {
 //      infowindow.open(map,marker);
 //      console.log(infowindow)
 //    });
+    var stringInWindow = '<div id="content">'+
+      '<div id="siteNotice">'+ city + "water" + '</div>' + '</div>';
     bindInfoWindow(marker, map, infowindow, city);
     var color = chooseColors(citymap[city].population)
     var populationOptions = {
