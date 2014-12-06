@@ -4,10 +4,12 @@ var mapOptions = {
   center: myLatlng,
   mapTypeId: google.maps.MapTypeId.ROADMAP
 };
+
+var map = new google.maps.Map(document.getElementById("map-canvas"),
+    mapOptions);
+    
 var marker = new google.maps.Marker({
     position: myLatlng,
     map: map,
     title:"Hello World!"
 });
-var map = new google.maps.Map(document.getElementById("map-canvas"),
-    mapOptions);
