@@ -22,7 +22,7 @@ citymap['vancouver'] = {
 
 var cityCircle;
 
-function chooseColors(var amount){
+function chooseColors(amount){
   if (amount < 3){
     return "#FF0000"
   } else if (amount < 5) {
