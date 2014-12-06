@@ -7,6 +7,10 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return "Hello World!"
+    
+@app.route("/234")
+def hello():
+    return "Hello World 234!"
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app
