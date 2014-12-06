@@ -10,7 +10,16 @@ def hello(name):
     data = {'lat':159.553, 'long':35.244,'inventory':{'medical':3}}
     return json.dumps(data)
 
+@app.before_request
+def before_request():
+    g.db = connect_db()
 
+@app.teardown_request
+def teardown_request(exception):
+    db = getattr(g, 'db', None)
+    if db is not None:
+        db.close()
+        
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app
 
