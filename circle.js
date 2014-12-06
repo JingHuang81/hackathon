@@ -72,6 +72,15 @@ function initialize() {
       content: contentString
     });
     
+    var marker = new google.maps.Marker({
+      position: citymap[city].center,
+      map: map,
+      title: city
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+    });
+    
     var color = chooseColors(citymap[city].population)
     var populationOptions = {
       strokeColor: color,
