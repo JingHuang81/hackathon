@@ -63,7 +63,7 @@ function initialize() {
 //    });
     var stringInWindow = '<div id="content">'+
       '<div id="siteNotice">'+ city + "water" + '</div>' + '</div>';
-    bindInfoWindow(marker, map, infowindow, city);
+    bindInfoWindow(marker, map, infowindow, stringInWindow);
     var color = chooseColors(citymap[city].population)
     var populationOptions = {
       strokeColor: color,
