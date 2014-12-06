@@ -4,13 +4,10 @@ from flask import Flask
 # where app matches the name of this file without the .py extension.
 app = Flask(__name__)
 
-@app.route("/")
-def hello():
-    return "Hello World!"
-    
-@app.route("/234")
-def hello():
-    return "Hello World 234!"
+@app.route("/user/<username>")
+def hello(username):
+    return "Hello %s!" % username
+
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app
