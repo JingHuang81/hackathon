@@ -23,9 +23,9 @@ citymap['vancouver'] = {
 var cityCircle;
 
 function chooseColors(amount){
-  if (amount < 3){
+  if (amount / 1000000 < 3){
     return "#FF0000"
-  } else if (amount < 5) {
+  } else if (amount / 1000000 < 5) {
     return "#FFFF00" //YELLOW
   } else {
     return "#00FF00"
@@ -56,7 +56,7 @@ function initialize() {
       fillOpacity: 0.35,
       map: map,
       center: citymap[city].center,
-      radius: Math.sqrt(citymap[city].population) * 100
+      radius: 10000 / (Math.sqrt(citymap[city].population) * 100)
     };
     // Add the circle for this city to the map.
     cityCircle = new google.maps.Circle(populationOptions);
