@@ -61,6 +61,7 @@ function initialize() {
     });
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.open(map,marker);
+      console.log(infowindow)
     });
     
     var color = chooseColors(citymap[city].population)
