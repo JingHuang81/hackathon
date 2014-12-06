@@ -47,7 +47,8 @@ function initialize() {
   // Construct the circle for each value in citymap.
   // Note: We scale the area of the circle based on the population.
   for (var city in citymap) {
-     var contentString = city;
+     var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+ city + '</div>'+ '</div>';
 
     var infowindow = new google.maps.InfoWindow({
       content: contentString
