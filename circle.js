@@ -44,15 +44,15 @@ function initialize() {
       mapOptions);
   
   
-  
   // Construct the circle for each value in citymap.
   // Note: We scale the area of the circle based on the population.
   for (var city in citymap) {
+    var color = chooseColores(citymap[city].population)
     var populationOptions = {
-      strokeColor: chooseColors(citymap[city].population),
+      strokeColor: color,
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: chooseColors(citymap[city].population),
+      fillColor: color,
       fillOpacity: 0.35,
       map: map,
       center: citymap[city].center,
