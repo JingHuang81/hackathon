@@ -22,6 +22,16 @@ citymap['vancouver'] = {
 
 var cityCircle;
 
+function chooseColors(var amount){
+  if (amount < 3){
+    return "#FF0000"
+  } else if (amount < 5) {
+    return "#FFFF00" //YELLOW
+  } else {
+    return "#00FF00"
+  }
+}
+
 function initialize() {
   // Create the map.
   var mapOptions = {
@@ -32,15 +42,17 @@ function initialize() {
 
   var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-
+  
+  
+  
   // Construct the circle for each value in citymap.
   // Note: We scale the area of the circle based on the population.
   for (var city in citymap) {
     var populationOptions = {
-      strokeColor: '#FF0000',
+      strokeColor: chooseColors(citymap[city].population),
       strokeOpacity: 0.8,
       strokeWeight: 2,
-      fillColor: '#FF0000',
+      fillColor: chooseColors(citymap[city].population),
       fillOpacity: 0.35,
       map: map,
       center: citymap[city].center,
