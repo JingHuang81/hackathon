@@ -13,3 +13,5 @@ var marker = new google.maps.Marker({
     map: map,
     title:"Hello World!"
 });
+
+marker.setMap(map);
