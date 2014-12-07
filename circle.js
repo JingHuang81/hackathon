@@ -49,8 +49,6 @@ function initialize() {
   // Construct the circle for each value in citymap.
   // Note: We scale the area of the circle based on the population.
   for (var city in citymap) {
-     var contentString = '<div id="content">'+
-      '<div id="siteNotice">'+ city + '</div>'+ '</div>';
 
     var marker = new google.maps.Marker({
       position: citymap[city].center,
@@ -62,7 +60,9 @@ function initialize() {
 //      console.log(infowindow)
 //    });
     var stringInWindow = '<div id="content">'+
-      '<div id="siteNotice">'+ city + "water" + '</div>' + '</div>';
+      '<div id="siteNotice">'+ city + 
+      " water " + citymap[city].population +
+      '</div>' + '</div>';
     bindInfoWindow(marker, map, infowindow, stringInWindow);
     var color = chooseColors(citymap[city].population)
     var populationOptions = {
