@@ -1,3 +1,4 @@
+import psycopg2
 from flask import Flask
 import json
 # If you get an error on the next line on Python 3.4.0, change to: Flask('app')
@@ -10,16 +11,6 @@ def hello(name):
     data = {'lat':159.553, 'long':35.244,'inventory':{'medical':3}}
     return json.dumps(data)
 
-@app.before_request
-def before_request():
-    g.db = connect_db()
-
-@app.teardown_request
-def teardown_request(exception):
-    db = getattr(g, 'db', None)
-    if db is not None:
-        db.close()
-        
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app
 
@@ -31,3 +22,17 @@ if __name__ == '__main__':
     except ValueError:
         port = 5555
     app.run(host, port)
+
+
+database='supplies'
+user='hackathon1234'
+password='wcs2014&'
+host='pwcaj7s7mh.database.windows.net'
+port='1433'
+#connection = psycopg2.connect(database='supplies', user='hackathon1234', password='wcs2014&', host='pwcaj7s7mh.database.windows.net',port='1433')
+connection = psycopg2.connect(database, user, password, host, port)
+
+cur = connection.getcursor()
+print connection
+#cur.execute("select city from locations where name = '%s%' ORDER BY city"
+#results = cur.fetchall()
