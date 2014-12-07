@@ -73,7 +73,7 @@ function initialize() {
       fillOpacity: 0.35,
       map: map,
       center: citymap[city].center,
-      radius: 100000000000 / (Math.sqrt(citymap[city].population) * 100)
+      radius: 30000000000 / (Math.sqrt(citymap[city].population) * 100)
     };
     
     
