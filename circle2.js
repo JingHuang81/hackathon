@@ -17,7 +17,7 @@ citymap['losangeles'] = {
 };
 citymap['vancouver'] = {
   center: new google.maps.LatLng(49.25, -123.1),
-  population: 603552
+  population: 1103552
 };
 
 var cityCircle;
