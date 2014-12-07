@@ -61,7 +61,9 @@ function initialize() {
 //    });
     var stringInWindow = '<div id="content">'+
       '<div id="siteNotice">'+ city + 
-      " water " + citymap[city].population +
+      " water " + citymap[city].population + 
+      '<a href="http://hackathon1234.azurewebsites.net/input.htm">'+
+      'http://hackathon1234.azurewebsites.net/input.htm</a>' + 
       '</div>' + '</div>';
     bindInfoWindow(marker, map, infowindow, stringInWindow);
     var color = chooseColors(citymap[city].population)
