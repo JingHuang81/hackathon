@@ -60,8 +60,8 @@ function initialize() {
 //      console.log(infowindow)
 //    });
     var stringInWindow = '<div id="content">'+
-      '<div id="siteNotice">'+ city + <br> + 
-      " water "  + citymap[city].population + <br>
+      '<div id="siteNotice">'+ city + '<br>' + 
+      " water "  + citymap[city].population + '<br>'
       '<a href="http://hackathon1234.azurewebsites.net/input.htm">'+
       'http://hackathon1234.azurewebsites.net/input.htm</a>' + 
       '</div>' + '</div>';
