@@ -76,7 +76,7 @@ function initialize() {
       radius: Math.sqrt(citymap[city].population) * 100
     };
     
-    console.log(populationOptions[radius])
+    console.log( Math.sqrt(citymap[city].population) * 100)
     
     // Add the circle for this city to the map.
     cityCircle = new google.maps.Circle(populationOptions);
