@@ -61,7 +61,7 @@ function initialize() {
 //    });
     var stringInWindow = '<div id="content">'+
       '<div id="siteNotice">'+ city + '<br>' + 
-      " water "  + citymap[city].population + '<br>'
+      " water "  + citymap[city].population + '<br>' +
       '<a href="http://hackathon1234.azurewebsites.net/input.htm">'+
       'http://hackathon1234.azurewebsites.net/input.htm</a>' + 
       '</div>' + '</div>';
