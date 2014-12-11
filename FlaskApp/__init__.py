@@ -1,4 +1,4 @@
-import psycopg2
+#import psycopg2
 from flask import Flask
 import json
 # If you get an error on the next line on Python 3.4.0, change to: Flask('app')
@@ -24,15 +24,15 @@ if __name__ == '__main__':
     app.run(host, port)
 
 
-database='supplies'
-user='hackathon1234'
-password='wcs2014&'
-host='pwcaj7s7mh.database.windows.net'
-port='1433'
+#database='supplies'
+#user='hackathon1234'
+#password='wcs2014&'
+#host='pwcaj7s7mh.database.windows.net'
+#port='1433'
 #connection = psycopg2.connect(database='supplies', user='hackathon1234', password='wcs2014&', host='pwcaj7s7mh.database.windows.net',port='1433')
-connection = psycopg2.connect(database, user, password, host, port)
+#connection = psycopg2.connect(database, user, password, host, port)
 
-cur = connection.getcursor()
-print connection
+#cur = connection.getcursor()
+#print connection
 #cur.execute("select city from locations where name = '%s%' ORDER BY city"
 #results = cur.fetchall()
